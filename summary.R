@@ -20,4 +20,6 @@ printBooks <- checkOutData %>%
   group_by("BOOK", CheckoutYear, "PHYSICAL") %>%
   summarise(max = max(Checkouts, na.rm=TRUE))
 
-
+laptopAverage <- checkOutData %>%
+  group_by(MaterialType, CheckoutYear) %>%
+  summarise(max = max(Checkouts, na.rm=TRUE))
