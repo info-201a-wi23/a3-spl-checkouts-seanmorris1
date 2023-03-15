@@ -13,7 +13,7 @@ publishers <- checkOutData %>%
   group_by(Publisher, Checkouts, CheckoutYear = 2022) %>%
   summarize(mean_summarry = mean(Checkouts))
 
-summarise_each(publishers, funs(max(., na.rm=TRUE)))
+publishers <- summarise_each(publishers, funs(max(., na.rm=TRUE)))
 
 publishers <- arrange(publishers, desc(Checkouts))
 

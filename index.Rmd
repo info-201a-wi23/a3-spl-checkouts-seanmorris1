@@ -5,90 +5,46 @@ output: html_document
 
 ### Introduction
 
-Introduction nothing is changing?
+The data that I will be using is from the Seattle Public Library and it consists of all material checked out between 2017 to 2023. I chose this data set because I wanted to see how often people were checking out material that were not books.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+I calculated 4 values in my summary information script. The first value was to see the average number of checkouts for each item. While there is 27 items, I decided to focus on the top 5 things I would checkout from the library. The list consists of Ebooks, Books, Movie, Comic, and Audio book. The average checkout for Ebooks was 25.1, Books was 20.9, Movies was 18.3, Comics was 15.8, Audio books was 25.3. The next value was the highest checkout month for a book titled "Normal people" and the highest month was June with 4903 checkouts. The third value is the year with the most checkouts for ebooks. This was interesting because it was in 2020 with 4903 checkouts. This was during the start of the pandemic. Lastly, I was wondering how the amount of print book checkouts changed over the years. It shows a trend of an increase each year with a boost during the pandemic.  
 
 ### The Dataset
 
-- Who collected/published the data?
 - The data is provided by The Seattle Public Library.
 
-- What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
 - There are parameters such as, whether its physical or digital, type of checkout, material, checkout year and month, Title, ISBN, creator, subject, publisher, and publication year.
 
-- How was the data collected or generated? 
-- The data is collected by Seattle Public Library checkouts.
+- The data is collected by Seattle Public Libraries checkout system.
 
-- Why was the data collected? 
-- All sorts of reasons but it seems to be the database for checkouts by Seattle Public Library.
+- All sorts of reasons but it seems to be the database for checkouts by Seattle Public Library which would be recorded either way. It could also benefit the library to keep a record of these to understand trends.
 
-- What, if any, ethical questions do you need to consider when working with this data?  
-- 
+- I'm not really sure of any ethical questions because this data is anonymous. I can figure out trends of what people are interested in reading during certain months but that is all.
 
-- What are possible limitations or problems with this data?   (at least 200 words)
-- 
+- There are a lot of limitations because I can only do so much with this data. I can understand trends of when people wanted to start reading, what genres are more prevalent or why people are using the library. But other than that there are only small niche things I can use this data to look at. This is also perfectly fine as this data is solely on what is being checked out by the library. One of the challenges I noticed was anything that wasn't a form of a book, movie, or song/music was put into a category called "mixed". This was really hard to figure out what was actually in there and I wasn't able to see a trend. It would be interesting to figure out the months when computers were checked out the most. Another limitation was that there were many duplicates but R studio suggested that they weren't. It was a hard work around but there are many items that have an extra comma which skews the data as I would not have noticed it.
 
 
-### First Trends Over Time Chart
+### Digital Entertainment Checkouts per Year
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+I included this chart because I was interested in seeing these forms of entertainment progressed over the years. The data starts at 2017 and ends in 2023. What we can see is that movies and songs stopped being checked out after 2018. This makes sense as Netflix and other streaming platforms grew exceptionally. What is interesting though is that music was still being checked out regularly but has died down significantly. Audio books have shown a strong trends upwards and Ebook's are slightly more popular now. 
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, messages = FALSE,code = readLines("chart1_example.R"), message=FALSE, warning=FALSE}
+```
 
 
-### Second Trends Over Time Chart
+### Average Book Checkouts By Month Betwen 2017 and 2023
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
-
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-{r, echo = FALSE, code = readLines("chart2_example.R")}
+I wanted to look at three main books. Prints, Audio books, and Ebooks. The reason for this is because I wanted to see if people prefer prints still. From my findings it is not definitive that digital books are more popular because it could be a matter of accessibility. It is easier to open a computer or phone and rent a book than drive to the library.But the findings show that digital books are far more prominent than prints.
 
 
-### Your Choice
+```{r, echo = FALSE, warning = FALSE, messages = FALSE,code = readLines("chart2_example.R"), message=FALSE, warning=FALSE}
+```
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
+### Top 5 Publishers of 2022
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
+I wanted to go for something a little simple as my last chart. I went with a bar graph that showed the top 5 publishers to be checked out of the Seattle Public Library. It was interesting because Lenovo is on there and I assume this either software or laptops. The largest publisher is Blackstone Audio which focuses on Ebooks. An assumption that I can make about this is that citizens of Seattle are far more interested in Ebooks rather than prints.
 
-Here's an example of how to run an R script inside an RMarkdown file:
-
-{r, echo = FALSE, code = readLines("publisherChart.R")}
+```{r, echo = FALSE, warning = FALSE, messages = FALSE,code = readLines("publisherChart.R"), message=FALSE, warning=FALSE}
+```
